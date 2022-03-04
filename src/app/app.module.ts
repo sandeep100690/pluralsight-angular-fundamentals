@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './servicesex/app/dashboard/dashboard.component';
 import { EditBookComponent } from './servicesex/app/edit-book/edit-book.component';
 import { EditReaderComponent } from './servicesex/app/edit-reader/edit-reader.component';
+import { LoggerService } from './servicesex/app/core/logger.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { EditReaderComponent } from './servicesex/app/edit-reader/edit-reader.co
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
