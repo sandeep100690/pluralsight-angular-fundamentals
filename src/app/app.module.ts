@@ -30,9 +30,13 @@ import { PlainLoggerService } from './servicesex/app/core/plain-logger.service';
     FormsModule
   ],
   providers: [
-    PlainLoggerService,
-    {provide: LoggerService, useExisting: PlainLoggerService},
-    DataService
+    // PlainLoggerService,
+    // {provide: LoggerService, useExisting: PlainLoggerService},
+    DataService,
+    { provide: LoggerService, useValue:{
+      log: (message:string) => console.log(`Message: ${message}`),
+      error: (message:string) => console.log(`Message: ${message}`)
+    }},
   ],
   bootstrap: [AppComponent]
 })
