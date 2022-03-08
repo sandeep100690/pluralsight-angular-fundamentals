@@ -14,6 +14,7 @@ import { EditReaderComponent } from './servicesex/app/edit-reader/edit-reader.co
 import { LoggerService } from './servicesex/app/core/logger.service';
 import { DataService } from './servicesex/app/core/data.service';
 import { PlainLoggerService } from './servicesex/app/core/plain-logger.service';
+import { dataServiceFactory } from './servicesex/app/core/data.service.factory';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { PlainLoggerService } from './servicesex/app/core/plain-logger.service';
   ],
   providers: [
     // PlainLoggerService,
-    // {provide: LoggerService, useExisting: PlainLoggerService},
-    DataService,
-    { provide: LoggerService, useValue:{
-      log: (message:string) => console.log(`Message: ${message}`),
-      error: (message:string) => console.log(`Message: ${message}`)
-    }},
+    // {provide: LoggerService, useExisting: PlainLoggerService},     
+    // { provide: LoggerService, useValue:{
+    //   log: (message:string) => console.log(`Message: ${message}`),
+    //   error: (message:string) => console.log(`Message: ${message}`)
+    // }},
+    // { provide: DataService, useFactory: dataServiceFactory, deps: [LoggerService]}
+    LoggerService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })
