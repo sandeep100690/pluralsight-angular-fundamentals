@@ -12,6 +12,8 @@ import { DashboardComponent } from './servicesex/app/dashboard/dashboard.compone
 import { EditBookComponent } from './servicesex/app/edit-book/edit-book.component';
 import { EditReaderComponent } from './servicesex/app/edit-reader/edit-reader.component';
 import { LoggerService } from './servicesex/app/core/logger.service';
+import { DataService } from './servicesex/app/core/data.service';
+import { PlainLoggerService } from './servicesex/app/core/plain-logger.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { LoggerService } from './servicesex/app/core/logger.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LoggerService, useClass: PlainLoggerService},
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

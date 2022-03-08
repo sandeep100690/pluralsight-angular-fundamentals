@@ -4,9 +4,7 @@ import { Book } from '../models/book';
 import { Reader } from '../models/reader';
 import { LoggerService } from './logger.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class DataService {
 
