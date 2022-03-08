@@ -30,7 +30,8 @@ import { PlainLoggerService } from './servicesex/app/core/plain-logger.service';
     FormsModule
   ],
   providers: [
-    {provide: LoggerService, useClass: PlainLoggerService},
+    PlainLoggerService,
+    {provide: LoggerService, useExisting: PlainLoggerService},
     DataService
   ],
   bootstrap: [AppComponent]
