@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AddBookComponent } from './servicesex/app/add-book/add-book.component';
 import { AddReaderComponent } from './servicesex/app/add-reader/add-reader.component';
@@ -28,7 +28,8 @@ import { dataServiceFactory } from './servicesex/app/core/data.service.factory';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     // PlainLoggerService,
